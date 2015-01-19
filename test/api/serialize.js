@@ -56,4 +56,35 @@ describe('$(...)', function() {
 
   });
 
+  describe('.serialize', function() {
+
+    it('() : should get form controls', function() {
+      expect($('form#simple').serialize()).to.equal('fruit=Apple');
+    });
+
+    it.skip('() : should get nested form controls', function() {
+      // TODO: Use contain
+      expect($('form#nested').serialize()).to.have.length(2);
+    });
+
+    it.skip('() : should not get disabled form controls', function() {
+      // TODO: Use ''
+      expect($('form#disabled').serializeArray()).to.have.length(0);
+    });
+
+    it.skip('() : should get multiple selected options', function() {
+      // TODO: Use contain
+      expect($('form#multiple').serializeArray()).to.have.length(2);
+      var data = $('form#multiple').serializeArray();
+      data.sort(function (a, b) {
+        return a.value - b.value;
+      });
+      expect(data[0].name).to.equal('fruit');
+      expect(data[0].value).to.equal('Apple');
+      expect(data[1].name).to.equal('fruit');
+      expect(data[1].value).to.equal('Orange');
+    });
+
+  });
+
 });
