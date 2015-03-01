@@ -1,4 +1,4 @@
-# cheerio [![Build Status](https://secure.travis-ci.org/cheeriojs/cheerio.svg?branch=master)](http://travis-ci.org/cheeriojs/cheerio)
+# cheerio [![Build Status](https://secure.travis-ci.org/cheeriojs/cheerio.svg?branch=master)](http://travis-ci.org/cheeriojs/cheerio) [![Gittask](https://gittask.com/cheeriojs/cheerio.svg)](https://gittask.com/cheeriojs/cheerio)
 
 Fast, flexible, and lean implementation of core jQuery designed specifically for the server.
 
@@ -238,6 +238,16 @@ $('.apple.green').toggleClass('fruit green red', true).html()
 #### .is( function(index) )
 Checks the current list of elements and returns `true` if _any_ of the elements match the selector. If using an element or Cheerio selection, returns `true` if _any_ of the elements match. If using a predicate function, the function is executed in the context of the selected element, so `this` refers to the current element.
 
+### Forms
+
+#### .serializeArray()
+
+Encode a set of form elements as an array of names and values.
+
+```js
+$('<form><input name="foo" value="bar" /></form>').serializeArray()
+//=> [ { name: 'foo', valule: 'bar' } ]
+```
 
 ### Traversing
 
@@ -441,7 +451,7 @@ $('li').not('.apple').length;
 Function:
 
 ```js
-$('li').filter(function(i, el) {
+$('li').not(function(i, el) {
   // this === el
   return $(this).attr('class') === 'orange';
 }).length;
