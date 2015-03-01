@@ -117,4 +117,24 @@ describe('$(...)', function() {
 
   });
 
+  describe('.serialize', function() {
+
+    it('() : should get form controls', function() {
+      expect($('form#simple').serialize()).to.equal('fruit=Apple');
+    });
+
+    it('() : should get nested form controls', function() {
+      expect($('form#nested').serialize()).to.equal('fruit=Apple&vegetable=Carrot');
+    });
+
+    it('() : should not get disabled form controls', function() {
+      expect($('form#disabled').serialize()).to.equal('');
+    });
+
+    it('() : should get multiple selected options', function() {
+      expect($('form#multiple').serialize()).to.equal('fruit=Apple&fruit=Orange');
+    });
+
+  });
+
 });
