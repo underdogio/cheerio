@@ -117,7 +117,7 @@ describe('$(...)', function() {
 
   });
 
-  describe.only('.serialize', function() {
+  describe('.serialize', function() {
 
     it('() : should get form controls', function() {
       expect($('form#simple').serialize()).to.equal('fruit=Apple');
@@ -135,7 +135,7 @@ describe('$(...)', function() {
       expect($('form#multiple').serialize()).to.equal('fruit=Apple&fruit=Orange');
     });
 
-    it('() : should save elements with no value as an empty string', function() {
+    it.only('() : should save elements with no value as an empty string', function() {
       expect($('form#valueless').serialize()).to.equal('fruit=');
     });
 
