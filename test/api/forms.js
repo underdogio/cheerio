@@ -135,7 +135,7 @@ describe('$(...)', function() {
       expect($('form#multiple').serialize()).to.equal('fruit=Apple&fruit=Orange');
     });
 
-    it.skip('() : should save elements with no value as an empty string', function() {
+    it('() : should save elements with no value as an empty string', function() {
       expect($('form#valueless').serialize()).to.equal('fruit=');
     });
 
