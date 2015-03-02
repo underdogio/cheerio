@@ -63,5 +63,6 @@ exports.forms = [
   '<form id="multiple"><select name="fruit" multiple><option value="Apple" selected>Apple</option><option value="Orange" selected>Orange</option><option value="Carrot">Carrot</option></select></form>',
   '<form id="textarea"><textarea name="fruits">Apple\nOrange</textarea></form>',
   '<form id="valueless"><input type="text" name="fruit" /></form>',
-  '<form id="falsy-value"><input type="text" name="fruit" /></form>'
+  '<form id="falsy-value"><input type="text" name="fruit" /></form>',
+  '<form id="spaces"><input type="text" name="fruit" value="Blood orange" /></form>'
 ].join('');
