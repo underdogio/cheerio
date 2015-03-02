@@ -135,17 +135,6 @@ describe('$(...)', function() {
       expect($('form#multiple').serialize()).to.equal('fruit=Apple&fruit=Orange');
     });
 
-    it.only('() : should save elements with no value as an empty string', function() {
-      expect($('form#valueless').serialize()).to.equal('fruit=');
-    });
-
-    it.skip('() : should save elements with a falsy but not undefined/null value as its string equivalent', function() {
-      // Convert to proper falsy value, assert it hasn't been coerced to a string, and serialize
-      $('form#falsy-value input').val(0);
-      expect($('form#falsy-value input').val()).to.equal(0);
-      expect($('form#falsy-value').serialize()).to.equal('fruit=0');
-    });
-
     it('() : should encode spaces as +\'s', function() {
       expect($('form#spaces').serialize()).to.equal('fruit=Blood+orange');
     });
