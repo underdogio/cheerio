@@ -208,4 +208,20 @@ describe('cheerio', function() {
 
   });
 
+  describe('.param', function() {
+
+    it.skip('() : should encode spaces as +\'s', function() {
+      // expect($('form#multiple').serialize()).to.equal('fruit=Apple&fruit=Orange');
+    });
+
+    it.skip('() : should encode an object', function() {
+      expect($('form#multiple').serialize()).to.equal('fruit=Apple&fruit=Orange');
+    });
+
+    it.skip('() : should respect traditional flag', function() {
+      expect($('form#multiple').serialize()).to.equal('fruit=Apple&fruit=Orange');
+    });
+
+  });
+
 });
